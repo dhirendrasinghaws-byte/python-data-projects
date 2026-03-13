@@ -1,16 +1,13 @@
 import pandas as pd
 
-df = pd.read_csv("C:/Users/thera/OneDrive/Desktop/python-data-projects/Job-market-analyzer/data/jobs.csv")
+# load dataset
+df = pd.read_csv("C:/Users/thera/OneDrive/Desktop/python-data-projects/Job-market-analyzer/data/job_skills.csv")
 
-print("Dataset:\n")
-print(df)
+print("First rows:\n")
+print(df.head())
 
-print("\nHighest Salary Job:\n")
-print(df.loc[df["salary"].idxmax()])
+print("\nDataset Info:\n")
+print(df.info())
 
-print("\nJobs per City:\n")
-print(df["location"].value_counts())
-
-print("\nMost Demanded Skill:\n")
-print(df["skills"].value_counts())
-
+print("\nMost demanded skills:\n")
+print(df.loc[df["skill_abr"].value_counts().head(10)])
