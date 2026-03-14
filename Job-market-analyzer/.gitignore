@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Dataset folders
+Linkedin_Job_Postings/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
