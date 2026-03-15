@@ -1,49 +1,123 @@
 # Job Market Analyzer
 
-A Python Data Engineering project that analyzes job market skill demand using ETL pipeline architecture.
-
 ## Project Overview
 
-This project extracts job skills data, transforms it to identify the most demanded skills, and loads the results into a report.
+The **Job Market Analyzer** is a data engineering project built using Python to analyze the demand for skills in job postings.
+The project processes a dataset of job skills and identifies the most demanded skills in the market.
 
-The project demonstrates core Data Engineering concepts such as:
+A simple **ETL pipeline** is implemented to extract, transform, and analyze the dataset, and then generate both a report and visualization.
 
-- Data Extraction
-- Data Transformation
-- Data Loading
-- Automated pipelines
-- Data analysis with Pandas
+---
 
-## Tech Stack
+## Project Architecture
 
-- Python
-- Pandas
-- Git
-- GitHub
+The project follows a basic **ETL pipeline structure**:
+
+Extract → Transform → Load → Visualize
+
+1. **Extract** – Load the dataset from CSV files
+2. **Transform** – Process the dataset and calculate the most demanded skills
+3. **Load** – Save the processed results into a CSV report
+4. **Visualize** – Generate a bar chart to display the top skills
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* Matplotlib
+* Git & GitHub
+
+---
 
 ## Project Structure
 
-Job-market-analyzer
-│
-├── data
-│   └── job_skills.csv
-│
-├── output
-│   └── top_skills_report.csv
+```
+job-market-analyzer
 │
 ├── src
 │   ├── extract.py
 │   ├── transform.py
-│   └── load.py
+│   ├── load.py
+│   └── visualize.py
+│
+├── output
+│   ├── top_skills_report.csv
+│   └── top_skills_chart.png
 │
 ├── pipeline.py
 └── README.md
+```
 
-## How to Run the Project
+---
 
-1. Clone the repository
-2. Install required libraries
-3. Run the pipeline
+## Dataset
 
-```bash
+The dataset contains job-related skill information extracted from job postings.
+Each record represents a job posting and the associated skill required.
+
+Example columns:
+
+* `job_id`
+* `skill_abr`
+
+---
+
+## How the Pipeline Works
+
+The pipeline is executed through the main script:
+
+```
 python pipeline.py
+```
+
+Pipeline steps:
+
+1. Extract dataset using Pandas
+2. Transform data to calculate most demanded skills
+3. Save results to CSV
+4. Generate visualization chart
+
+---
+
+## Output
+
+The pipeline produces the following outputs:
+
+**1. Skills Report**
+
+```
+output/top_skills_report.csv
+```
+
+Contains the most demanded skills and their frequency.
+
+**2. Visualization Chart**
+
+```
+output/top_skills_chart.png
+```
+
+A bar chart showing the top skills in demand.
+
+---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+* Data extraction and processing using Python
+* Data transformation using Pandas
+* Data visualization using Matplotlib
+* Building a simple ETL data pipeline
+* Version control using Git and GitHub
+
+---
+
+## Future Improvements
+
+* Add more datasets
+* Create interactive dashboards
+* Automate pipeline scheduling
+* Deploy pipeline using cloud services
